@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyTemp : MonoBehaviour
 {
+
+    // Hello again stephanie
     public float speed;
     public float bounce = 2;
     // Start is called before the first frame update
