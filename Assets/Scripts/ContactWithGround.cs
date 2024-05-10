@@ -13,32 +13,32 @@ public class ContactWithGround : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        jumpForce = 50;
+        jumpForce = 800;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("jump"))
-        {
-            if (isGrounded)
-            {
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    if (isGrounded)
+        //    {
+        //        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //    }
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         // Gets the layer of the item you collide with as an int
-        int layerNumber = other.gameObject.6;
+        int layerNumber = other.gameObject.layer;
         // Converts that number to the layer name
-        string layerName = LayerMask.LayerToName(6);
+        string layerName = LayerMask.LayerToName(other.gameObject.layer);
         // This is the name we want to respond to
         string groundLayerName = "Ground";
 
         // Checks if the layer is a ground. Set to true if it's not
-        if (Ground == groundLayerName)
+        if (layerName == groundLayerName)
         {
             isGrounded = true;
         }

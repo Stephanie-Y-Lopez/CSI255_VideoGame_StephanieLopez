@@ -5,21 +5,37 @@ using UnityEngine;
 //Stephanie Lopez
 public class Player : MonoBehaviour
 {
+    //Fields
+    public Animator animator; // Refrences Animator in unity
     public int PlayerSpeed = 10;
     public bool PlayerFacingRight = true;
-    public int JumpDistance = 150;
-    public float movementX;
+    public int JumpDistance = 5;
+    private float movementX;
     public bool isGrounded = false; // Tracks whether the player is grounded
+
+    //RigidBody rb;
+
+    void Start()
+    {
+        Debug.Log("This works");
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
         // Allow the player to jump only when grounded and canJump is true
-        if (isGrounded && Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
 
+
+
+        //if (isGrounded && Input.GetButtonDown("Jump"))
+        //{
+        //    Jump();
+        //}
+
+        
+
+       
         PlayerMovement();
     }
 
@@ -63,7 +79,6 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        //Code for jumping
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpDistance));
     }
 
