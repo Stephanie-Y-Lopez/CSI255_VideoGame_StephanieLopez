@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class EnemyTemp : MonoBehaviour
+public class EnemnyAI : MonoBehaviour
 {
-
-    // Hello again stephanie
     public float speed;
     public float bounce = 2;
     // Start is called before the first frame update
@@ -33,10 +31,5 @@ public class EnemyTemp : MonoBehaviour
                 playerObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
             }
         }
-
-          
-            
     }
-
-
 }

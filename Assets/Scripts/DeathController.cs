@@ -22,5 +22,4 @@ public class DeathController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
 }

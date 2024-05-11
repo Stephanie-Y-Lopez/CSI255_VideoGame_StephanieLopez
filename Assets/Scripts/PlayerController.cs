@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         }
 
         PlayerFacing();
+        AnimatorIfWorking();
     }
 
     // Colliders
@@ -85,5 +87,11 @@ public class PlayerController : MonoBehaviour
     {
         PlayerFacingRight = !PlayerFacingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    //Still animation threshold is 0, Walking animationb threshold is 10, just like walking speed. 
+    void AnimatorIfWorking()
+    {
+        animator.SetFloat("IsWalking", Mathf.Abs(rb.velocity.x));
     }
 }
