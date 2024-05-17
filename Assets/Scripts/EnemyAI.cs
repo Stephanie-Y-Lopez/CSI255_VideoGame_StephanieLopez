@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+//Stephanie Lopez
 
 public class EnemnyAI : MonoBehaviour
 {

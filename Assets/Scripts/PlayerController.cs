@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+//Stephanie Lopez
 
 public class PlayerController : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
             }
 
             numOfJumps++;
+                    AudioManager.Instance.PlaySFX("Jump");
+
         }
 
         PlayerFacing();
