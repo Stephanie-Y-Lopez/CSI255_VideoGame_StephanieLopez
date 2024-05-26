@@ -28,4 +28,20 @@
 
 ### Lessons Learned
 - Intellisense is a very useful tool that assists in making the development code process of the game much more simple.
-- Using AI is a very helpful tool to turn to when questioning why your code may not be functioning. Just make sure NOT TO always believe what it says. it may take you down a rabbit hole and break everything. 
+- Using AI is a very helpful tool to turn to when questioning why your code may not be functioning. Just make sure NOT TO always believe what it says. it may take you down a rabbit hole and break everything.
+
+## Date: May 25th, 2024
+### Features Added Since Last Update
+- Since my game is Mario based, my goombas are symbols of the IRS.. because.. who likes the IRS!?!?
+- Added in background music as well as some basic sound effects
+- Implemented scene switching for my character to go from level 1 to 2 to 3!
+- Worked on my full design for level 1 as well as 2.
+- Designed some simple elements such as bushes, loading in screen, dying screen, completion screens, and some buttons! (Will work on implementing in next week!)
+
+### Issues Encountered
+- Being intimidated by how good everyone else's game is. Everyone is doing so good!!!!
+- As for background features in my game such as designs like hills and bushes my character was sometimes going in front and sometimes going behind them so I fixed that so he only goes in front of them! (With the help of Mr.Cram thank you!)
+- My character's rigidbody was causing him to collide oddly with blocks when jumping so I made it smaller to suit him better! (With the help of Mr.Cram thank you!)
+
+### Lessons Learned
+- Asking questions is ALWAYS! The right answer! 
