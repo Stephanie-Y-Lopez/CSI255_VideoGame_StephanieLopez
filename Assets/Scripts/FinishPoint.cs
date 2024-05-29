@@ -8,8 +8,14 @@ public class FinishPoint : MonoBehaviour
     [SerializeField] bool nextLevel;
     [SerializeField] string levelName;
 
+    [SerializeField] int nextLevelIndex;
+
     private void OnTriggerEnter2D(Collider2D collision) 
     {
+        Debug.Log("This works");
+    //     // SceneController.instance.NextLevel();
+    // SceneController.instance.LoadScene(nextLevelIndex);
+
         if (collision.CompareTag("Player"))
         {
             //Will take OZ to the next level!

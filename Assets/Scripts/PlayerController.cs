@@ -95,6 +95,6 @@ public class PlayerController : MonoBehaviour
     //Still animation threshold is 0, Walking animationb threshold is 10, just like walking speed. 
     void AnimatorIfWorking()
     {
-        animator.SetFloat("IsWalking", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("Oz_Walking", Mathf.Abs(rb.velocity.x));
     }
 }

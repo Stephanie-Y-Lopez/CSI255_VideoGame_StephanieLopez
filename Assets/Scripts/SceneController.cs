@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
+    //public GameObject gameOverOz;<IsDeadScreen
+
     private void Awake()
     {
         if (instance == null)
@@ -28,7 +30,15 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadSceneAsync(+1);
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadSceneAsync(index);
     }
 
+    // public void gameOver()<IsDeadScreen
+    // {
+    //     gameOverOz.SetActive(true);
+    // }
 }
