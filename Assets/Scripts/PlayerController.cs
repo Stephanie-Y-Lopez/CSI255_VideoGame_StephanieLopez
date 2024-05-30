@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         }
 
         PlayerFacing();
-        AnimatorIfWorking();
+        animator.SetFloat("Walking", movementX);
     }
 
     // Colliders
@@ -93,8 +93,8 @@ public class PlayerController : MonoBehaviour
     }
 
     //Still animation threshold is 0, Walking animationb threshold is 10, just like walking speed. 
-    void AnimatorIfWorking()
-    {
-        animator.SetFloat("Oz_Walking", Mathf.Abs(rb.velocity.x));
-    }
+    // void AnimatorIfWorking()
+    // {
+    //     animator.SetFloat("Oz_Walking", Mathf.Abs(rb.velocity.x));
+    // }
 }
