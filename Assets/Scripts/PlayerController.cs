@@ -10,13 +10,15 @@ public class PlayerController : MonoBehaviour
     //Fields
     public Animator animator; //Refrences to Animator
     public float speed;
-    private float movementX;
+    public float movementX;
     //Jump stuff
     public float jumpDistance = 10;
     public bool isGrounded = false;
     public bool canJump = true;
     public int maxJumps = 2;
     public int numOfJumps = 0;
+    public float deadZone = .1f;
+  
     // Jump stuff ^^
     public bool PlayerFacingRight = true;
     Rigidbody2D rb;
@@ -34,6 +36,10 @@ public class PlayerController : MonoBehaviour
         // Horizontal Movement
         movementX = Input.GetAxis("Horizontal");
         float movement = movementX * speed * Time.deltaTime;
+        // bool isRunning = !(movementX > -(deadZone * -1) && movementX < deadZone);
+        //Code right below makes it so that the still animation transitions over to the walkings animation!
+        bool isRunning  = Input.GetButton("Horizontal");
+        animator.SetBool("isRunning", isRunning);
 
         if (!PlayerFacingRight)
         {
@@ -55,7 +61,7 @@ public class PlayerController : MonoBehaviour
         }
 
         PlayerFacing();
-        animator.SetFloat("Walking", movementX);
+
     }
 
     // Colliders
