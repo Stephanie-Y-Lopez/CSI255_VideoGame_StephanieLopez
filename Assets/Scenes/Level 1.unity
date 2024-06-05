@@ -9237,11 +9237,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   speed: 8
+  movementX: 0
   jumpDistance: 10
   isGrounded: 0
   canJump: 1
   maxJumps: 2
   numOfJumps: 0
+  deadZone: 0.1
   PlayerFacingRight: 1
 --- !u!1 &655843051
 GameObject:
@@ -11552,7 +11554,7 @@ Transform:
   m_GameObject: {fileID: 794415591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.831419, y: -8.486099, z: 0.18928075}
+  m_LocalPosition: {x: 30.85, y: -9.5, z: 0.18928075}
   m_LocalScale: {x: 0.24999993, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
