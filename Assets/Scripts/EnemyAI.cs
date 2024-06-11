@@ -24,11 +24,13 @@ public class EnemnyAI : MonoBehaviour
 
         GameObject playerObject;
 
-        if(other.gameObject.tag == "Player") {
+        if(other.gameObject.tag == "Player") 
+        {
             playerObject = other.gameObject;
             Destroy(gameObject);     
 
-            if(playerObject.tag == "Player") {
+            if(playerObject.tag == "Player") 
+            {
                 playerObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
             }
         }

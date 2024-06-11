@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     // Jump stuff ^^
     public bool PlayerFacingRight = true;
     Rigidbody2D rb;
+    RaycastHit2D hitRay;
     
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,9 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && canJump ) 
         {
+            animator.SetBool("Jump", true);
+            canJump = true;
+
             if(numOfJumps < maxJumps) 
             {
                 rb.AddForce(Vector2.up * jumpDistance, ForceMode2D.Impulse);
@@ -62,6 +66,8 @@ public class PlayerController : MonoBehaviour
 
         PlayerFacing();
 
+        //For jumping animation
+        animator.SetFloat("YVelocity", rb.velocity.y);
     }
 
     // Colliders
@@ -71,7 +77,17 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             numOfJumps = 0;
+
+            //If Oz is grounded, jump will be false. 
+            animator.SetBool("Jump", !isGrounded);
         }
+
+        // if(hitRay.collider.tag == "MysteryBlock")
+        // {
+        //     hitRay.collider.GetComponent<MysteryBlock>().mysteryBlockBounce();
+        // }
+
+        
     }
 
     private void OnCollisionExit2D(Collision2D other) 

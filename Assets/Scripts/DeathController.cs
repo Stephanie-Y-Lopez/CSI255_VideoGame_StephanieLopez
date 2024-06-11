@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Stephanie Lopez
 
 public class DeathController : MonoBehaviour
@@ -18,6 +19,7 @@ public class DeathController : MonoBehaviour
             //gameManger.gameOver();<IsDeadScreen
             Destroy(other.gameObject);
             AudioManager.Instance.PlaySFX("diesound");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
