@@ -17,7 +17,8 @@ public class DeathController : MonoBehaviour
         {
             //isDead = true;<IsDeadScreen
             //gameManger.gameOver();<IsDeadScreen
-            Destroy(other.gameObject);
+            //Debug.Log($"{this.name} collided with player");
+            // Destroy(other.gameObject);
             AudioManager.Instance.PlaySFX("diesound");
             SceneManager.LoadScene("GameOver");
         }

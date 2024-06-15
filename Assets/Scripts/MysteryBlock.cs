@@ -13,7 +13,7 @@ public class MysteryBlock : MonoBehaviour
     private bool canBounce = true;
     public Sprite emptyBlockSprite;
 
-    public GameObject coin;
+    public GameObject mushroomPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -40,21 +40,21 @@ public class MysteryBlock : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Player") {
-            mysteryBlockBounce();
-
-            GameObject newCoin = Instantiate(coin);
-            
-            newCoin.transform.position = transform.position + new Vector3(0, 1.5f, 0);
-            newCoin.GetComponent<Rigidbody2D>().AddForce(Vector2.up + new Vector2(0,3), ForceMode2D.Impulse);
-        }
-
-        GameObject playerObject;
         if(other.gameObject.tag == "Player") 
         {
-            playerObject = other.gameObject;
-            Destroy(gameObject);     
+            mysteryBlockBounce();
+
+            GameObject newMushroom = Instantiate(mushroomPrefab);
+            newMushroom.transform.position = transform.position + new Vector3(0, 1.5f, 0);
+            //newMushroom.GetComponent<Rigidbody2D>().AddForce(Vector2.up + new Vector2(0,3), ForceMode2D.Impulse);
         }
+
+        // GameObject playerObject;
+        // if(other.gameObject.tag == "Player") 
+        // {
+        //     playerObject = other.gameObject;
+        //     Destroy(gameObject);     
+        // }
     }
 
 
@@ -82,11 +82,23 @@ public class MysteryBlock : MonoBehaviour
             }
             yield return null;
         }
+
+        SpawnMushroom();
+        ChangeSprite();
     }
+
+
+    void SpawnMushroom()
+    {
+        GameObject newMushroom = Instantiate(mushroomPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        // Will destroy the mushroom after a certain time if not collected!
+        Destroy(newMushroom, 10f);
+    }
+
 
     void ChangeSprite()
     {
-        GetComponent<Animator>().enabled = false;
-        GetComponent<SpriteRenderer> ().sprite = emptyBlockSprite;
+        //GetComponent<Animator>().enabled = false;
+        GetComponent<SpriteRenderer>().sprite = emptyBlockSprite;
     }
 }

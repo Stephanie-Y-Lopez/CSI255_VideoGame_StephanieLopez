@@ -3933,7 +3933,7 @@ GameObject:
   - component: {fileID: 257372902}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5799,6 +5799,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 18932164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &407276560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.323022
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.478136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410901704204391900, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268895749406722770, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_Name
+      value: Mushroom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8268895749406722770, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1265468849}
+  m_SourcePrefab: {fileID: 100100000, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
 --- !u!1 &419762608
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,7 +9130,7 @@ Transform:
   m_GameObject: {fileID: 650852753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 93.3, y: -1.4, z: 0}
+  m_LocalPosition: {x: -18.4, y: -6.11, z: 0}
   m_LocalScale: {x: 2.6, y: 3.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11542,7 +11606,7 @@ GameObject:
   - component: {fileID: 800189426}
   m_Layer: 7
   m_Name: Enemy (4)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13917,7 +13981,7 @@ GameObject:
   - component: {fileID: 921389599}
   m_Layer: 7
   m_Name: Enemy (3)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14022,7 +14086,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0891867, y: 0.21407413}
+  m_Size: {x: 1.01, y: 0.21407413}
   m_EdgeRadius: 0
 --- !u!212 &921389602
 SpriteRenderer:
@@ -17942,7 +18006,7 @@ GameObject:
   - component: {fileID: 1160630971}
   m_Layer: 7
   m_Name: Enemy (1)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19665,6 +19729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eba61414fe7e5f4882326659070c4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScene: 0
 --- !u!4 &1246982800
 Transform:
   m_ObjectHideFlags: 0
@@ -19680,6 +19745,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1265468844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8268895749406722770, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+  m_PrefabInstance: {fileID: 407276560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1265468849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265468844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7627bc560ed3e409fb25c59b37c1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1266786618
 GameObject:
   m_ObjectHideFlags: 0
@@ -25185,7 +25267,7 @@ GameObject:
   - component: {fileID: 1636423377}
   m_Layer: 7
   m_Name: Enemy (2)
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30592,7 +30674,7 @@ GameObject:
   - component: {fileID: 1995174837}
   m_Layer: 7
   m_Name: Enemies
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32318,6 +32400,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1358760747048358857, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358760747048358857, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4.02
+      objectReference: {fileID: 0}
     - target: {fileID: 1676284806643453030, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
       propertyPath: coin
       value: 
@@ -32401,3 +32491,4 @@ SceneRoots:
   - {fileID: 559514746}
   - {fileID: 1843739150}
   - {fileID: 5571704619462519407}
+  - {fileID: 407276560}

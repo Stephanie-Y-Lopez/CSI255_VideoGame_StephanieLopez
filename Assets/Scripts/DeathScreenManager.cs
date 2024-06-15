@@ -5,9 +5,23 @@ using UnityEngine.SceneManagement;
 //Stephanie Lopez
 public class DeathScreenManager : MonoBehaviour
 {
+
+    SceneController sc;
+    public int currentIndex;
+    private void Start() {
+        sc = FindObjectOfType<SceneController>();
+        currentIndex = sc.currentScene;
+    }
+
     public void RestartLevel()
     {
-        Scene previousScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 2);
-        SceneManager.LoadScene(previousScene.name);
+        //Get the index of died on level
+        //  int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        // Debug.Log(currentSceneIndex);
+
+
+        //Scene previousScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 2);
+        
+        SceneManager.LoadScene(currentIndex);
     }
 }

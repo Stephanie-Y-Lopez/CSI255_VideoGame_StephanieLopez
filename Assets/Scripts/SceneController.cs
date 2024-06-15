@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
+    public int currentScene;
     //public GameObject gameOverOz;<IsDeadScreen
 
     private void Awake()
@@ -16,6 +17,10 @@ public class SceneController : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            if(SceneManager.GetActiveScene().buildIndex != 5) {
+                currentScene = SceneManager.GetActiveScene().buildIndex;
+            }
         }
         else
         {
@@ -25,11 +30,13 @@ public class SceneController : MonoBehaviour
 
     public void NextLevel()
     {
+        currentScene = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void StartGame() 
     {
+        currentScene = 1;
         SceneManager.LoadSceneAsync("Level 1");
     }
 
