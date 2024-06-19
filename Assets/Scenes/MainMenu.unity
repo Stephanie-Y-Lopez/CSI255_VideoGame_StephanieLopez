@@ -957,6 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 0
+  currentIndex: 0
 --- !u!114 &1565379910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,6 +983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savedDataText: {fileID: 0}
+  sc: {fileID: 0}
 --- !u!1 &1678978124
 GameObject:
   m_ObjectHideFlags: 0
