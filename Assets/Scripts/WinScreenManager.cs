@@ -8,6 +8,13 @@ public class WinScreenManager : MonoBehaviour
 {
     public void TakeBackToMM()
     {
+        Debug.Log("MainMenu button clicked");
+
         SceneManager.LoadSceneAsync("MainMenu");
     }
+
+    //public void OnLoadButtonClick()
+    //{
+    //     SceneManager.LoadSceneAsync("MainMenu");
+   // }
 }
