@@ -8,9 +8,18 @@ public class DeathScreenManager : MonoBehaviour
 
     SceneController sc;
     public int currentIndex;
-    private void Start() {
+    private void Start() 
+    {
         sc = FindObjectOfType<SceneController>();
-        currentIndex = sc.currentScene;
+        currentIndex = sc.currentScene; // Getting the current scene index
+
+        // SavingData.PlayerData pd = new SavingData.PlayerData 
+        // {
+        //     level = currentIndex
+        // };
+
+        // Debug.Log("Manager Runs");
+        // SavingData.SaveSystem.SaveData(pd);
     }
 
     public void RestartLevel()

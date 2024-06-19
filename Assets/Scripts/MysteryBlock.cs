@@ -14,6 +14,7 @@ public class MysteryBlock : MonoBehaviour
     public Sprite emptyBlockSprite;
 
     public GameObject mushroomPrefab;
+    //private bool SpawnedMushroom = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -21,70 +22,48 @@ public class MysteryBlock : MonoBehaviour
         originalPosition = transform.localPosition;
     }
 
-    // Update is called once per frame
-    void Update()
+  
+     private void OnCollisionEnter2D(Collision2D other)
     {
-        
-    }
-
-    public void mysteryBlockBounce()
-    {
-        if(canBounce)
+        if (other.gameObject.tag == "Player" && canBounce)
         {
             canBounce = false;
-            //Coroutine will called Bounce method
             StartCoroutine(Bounce());
         }
     }
 
-    
-    private void OnCollisionEnter2D(Collision2D other) 
+
+    private IEnumerator Bounce()
     {
-        if(other.gameObject.tag == "Player") 
+        Vector2 targetPosition = new Vector2(originalPosition.x, originalPosition.y + bounceHeight);
+
+        // Will move block to do upwards animation
+        while (transform.localPosition.y < targetPosition.y)
         {
-            mysteryBlockBounce();
-
-            GameObject newMushroom = Instantiate(mushroomPrefab);
-            newMushroom.transform.position = transform.position + new Vector3(0, 1.5f, 0);
-            //newMushroom.GetComponent<Rigidbody2D>().AddForce(Vector2.up + new Vector2(0,3), ForceMode2D.Impulse);
-        }
-
-        // GameObject playerObject;
-        // if(other.gameObject.tag == "Player") 
-        // {
-        //     playerObject = other.gameObject;
-        //     Destroy(gameObject);     
-        // }
-    }
-
-
-    IEnumerator Bounce()
-    {
-        while (true)
-        {
-            // Will transform the position of the x and y of mysteryBlock. 
-            transform.localPosition = new Vector2 (transform.localPosition.x, transform.localPosition.y + bounceSpeed * Time.deltaTime);
-            //if the block is greater than or equal to this statement, it will finish the loop. 
-            if (transform.localPosition.y >= originalPosition.y + bounceHeight)
-            break;
-            //This loop is for y the next loop is for x.
+            transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + bounceSpeed * Time.deltaTime);
             yield return null;
         }
 
-        while (true)
+        // Ensure it exactly reaches the target position
+        transform.localPosition = targetPosition;
+
+        // Will return position
+        while (transform.localPosition.y > originalPosition.y)
         {
-            transform.localPosition = new Vector2 (transform.localPosition.x, transform.localPosition.y - bounceSpeed * Time.deltaTime);
-            if (transform.localPosition.y >= originalPosition.y + bounceHeight)
-            {
-                //This makes sure the block goes back exactly where it was before. 
-                transform.localPosition = originalPosition;
-                break;
-            }
+            transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y - bounceSpeed * Time.deltaTime);
             yield return null;
         }
 
+        // Ensure it exactly reaches the original position
+        transform.localPosition = originalPosition;
+
+        // Will spawn mushroom and change sprite
         SpawnMushroom();
         ChangeSprite();
+
+        // Will Destroy the block after a tiny delay,
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 
 
@@ -98,7 +77,6 @@ public class MysteryBlock : MonoBehaviour
 
     void ChangeSprite()
     {
-        //GetComponent<Animator>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = emptyBlockSprite;
     }
 }

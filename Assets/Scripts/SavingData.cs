@@ -12,12 +12,13 @@ public class SavingData : MonoBehaviour
         public int level;
     }
 
-    public class SaveSystem : MonoBehaviour
+    public class SaveSystem
     {
-        public void SaveData(PlayerData data)
+        public static void SaveData(PlayerData data)
         {
             string json = JsonUtility.ToJson(data);
            File.WriteAllText(Application.persistentDataPath + "/playerData.json", json);
+           Debug.Log(Application.persistentDataPath);
         }
 
         public PlayerData LoadData()
@@ -30,5 +31,7 @@ public class SavingData : MonoBehaviour
             }
            return null;
         }
+        //Since this Loaddata method is public why does it not show up on click in the btn inspector?
+        //Why is there no OnLoadButtonClick method?
     }
 }

@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     public int maxJumps = 2;
     public int numOfJumps = 0;
     public float deadZone = .1f;
-  
     // Jump stuff ^^
     public bool PlayerFacingRight = true;
     Rigidbody2D rb;
@@ -34,17 +33,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Horizontal Movement
+        //Horizontal Movement
         movementX = Input.GetAxis("Horizontal");
         float movement = movementX * speed * Time.deltaTime;
-        // bool isRunning = !(movementX > -(deadZone * -1) && movementX < deadZone);
+        //bool isRunning = !(movementX > -(deadZone * -1) && movementX < deadZone);
         //Code right below makes it so that the still animation transitions over to the walkings animation!
         bool isRunning  = Input.GetButton("Horizontal");
         animator.SetBool("isRunning", isRunning);
 
         if (!PlayerFacingRight)
         {
-            movement *= -1; // ReverseS movement if facing left
+            movement *= -1; //Reverses movement if facing left
         }
     
         transform.Translate(new Vector2(movement, 0));
@@ -60,8 +59,7 @@ public class PlayerController : MonoBehaviour
             }
 
             numOfJumps++;
-                    AudioManager.Instance.PlaySFX("Jump");
-
+            AudioManager.Instance.PlaySFX("Jump");
         }
 
         PlayerFacing();
@@ -81,18 +79,48 @@ public class PlayerController : MonoBehaviour
             //If Oz is grounded, jump will be false. 
             animator.SetBool("Jump", !isGrounded);
         }
-
+        
         // if(hitRay.collider.tag == "MysteryBlock")
         // {
         //     hitRay.collider.GetComponent<MysteryBlock>().mysteryBlockBounce();
         // }
-
-        
     }
 
     private void OnCollisionExit2D(Collision2D other) 
     {
         isGrounded = false;
+    }
+
+    public void SpeedUp(float speedIncrease, float time) {
+        // StartCoroutine(SpeedUpCode(speedIncrease, time ));
+        StartCoroutine(ApplySpeedBoost(transform));
+
+
+        // speed += 4
+    }
+
+    public IEnumerator SpeedUpCode(float speedIncrease, float time) {
+
+        Debug.Log("Speed up starting");
+        float originalSpeed = speed;
+        speed += speedIncrease; //Will increase speed by 4 paces for mushroom duration. 
+
+        yield return new WaitForSeconds(time);
+
+        Debug.Log("Speed is ending");
+        speed = originalSpeed; //Will return to original speed. 
+
+    }
+
+        private IEnumerator ApplySpeedBoost(Transform player)
+    {
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        float originalSpeed = playerController.speed;
+        playerController.speed += 4; //Will increase speed by 4 paces for mushroom duration. 
+
+        yield return new WaitForSeconds(2);
+
+        playerController.speed = originalSpeed; //Will return to original speed. 
     }
 
     void PlayerFacing()

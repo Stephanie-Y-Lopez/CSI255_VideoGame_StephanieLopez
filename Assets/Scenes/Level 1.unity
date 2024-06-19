@@ -5809,11 +5809,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.323022
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.478136
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 3586672026686554431, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5851,11 +5851,24 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7410901704204391900, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8268895749406722770, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8268895749406722770, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268895749406722770, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2244654966996052195, guid: e64e70b5a9406e648b777417b43da83a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -19730,6 +19743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 0
+  currentIndex: 0
 --- !u!4 &1246982800
 Transform:
   m_ObjectHideFlags: 0
@@ -19762,6 +19776,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7627bc560ed3e409fb25c59b37c1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedBoostDuration: 2
+  speedIncrease: 4
+  timerManager: {fileID: 1793114761}
 --- !u!1 &1266786618
 GameObject:
   m_ObjectHideFlags: 0
@@ -27833,6 +27850,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1793114761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793114762}
+  m_Layer: 0
+  m_Name: TimerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1793114762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793114761}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -104.5, y: 15.3, z: -0.84629864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799661228
 GameObject:
   m_ObjectHideFlags: 0
@@ -32418,7 +32466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851902289005011482, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.251075
       objectReference: {fileID: 0}
     - target: {fileID: 1851902289005011482, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
       propertyPath: m_LocalScale.z
@@ -32426,11 +32474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851902289005011482, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.514
+      value: -4.941
       objectReference: {fileID: 0}
     - target: {fileID: 1851902289005011482, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.494
+      value: -6.9908
       objectReference: {fileID: 0}
     - target: {fileID: 1851902289005011482, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32468,6 +32516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MysteryBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 7637279916645898418, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8003160118181562401, guid: 4efd7293ef9b3c746bb412c850a986d7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -32492,3 +32544,4 @@ SceneRoots:
   - {fileID: 1843739150}
   - {fileID: 5571704619462519407}
   - {fileID: 407276560}
+  - {fileID: 1793114762}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8531660011111475479}
   - component: {fileID: 5812220491104724717}
   - component: {fileID: 7410901704204391900}
+  - component: {fileID: 2244654966996052195}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bb782f34419929a4d8fc1b4124be37b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -158,3 +159,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &2244654966996052195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8268895749406722770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7627bc560ed3e409fb25c59b37c1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBoostDuration: 2
+  speedIncrease: 4
+  timerManager: {fileID: 0}
